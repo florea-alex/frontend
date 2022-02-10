@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="title">
+        {{'Angajat Details'}}
+    </h1>
+    <mat-card class="card">
+        <p class="details">
+        {{'Nume' | marks}} {{angajat.nume}}
+        </p>
+        <p class="details">
+        {{'Prenume' | marks}} {{angajat.prenume}}
+        </p>
+        <p class="details">
+        {{'Job' | marks}} {{angajat.job}}
+        </p>
+    </mat-card>
+    <button mat-raised-button (click)="goToAngajat()" class="add-button">
+        Inapoi la angajat
+      </button>
+</div>

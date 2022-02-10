@@ -1,0 +1,19 @@
+<div class="container">
+    <h1 class="title">
+        {{'Client Details'}}
+    </h1>
+    <mat-card class="card">
+        <p class="details">
+        {{'Nume' | marks}} {{client.nume}}
+        </p>
+        <p class="details">
+        {{'Prenume' | marks}} {{client.prenume}}
+        </p>
+        <p class="details">
+        {{'CNP' | marks}} {{client.cnp}}
+        </p>
+    </mat-card>
+    <button mat-raised-button (click)="goToClient()" class="add-button">
+        Inapoi la client
+      </button>
+</div>

@@ -1,0 +1,34 @@
+<div class="container">
+    <h1 class="title">
+        {{ title }}
+    </h1>
+
+    <form [formGroup]="clientForm" class="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Id</mat-label>
+            <input matInput placeholder="Id" formControlName="id" />
+        </mat-form-field>
+  
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nume</mat-label>
+            <input matInput placeholder="Nume" formControlName="nume" />
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Prenume</mat-label>
+            <input matInput placeholder="Prenume" formControlName="prenume" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>CNP</mat-label>
+            <input matInput placeholder="CNP" formControlName="cnp" />
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="!data ? AddClient() : EditClient()" appHoverBtn>   
+        Salvare
+    </button>
+
+</div>

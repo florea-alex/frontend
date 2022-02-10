@@ -1,0 +1,33 @@
+<div class="container">
+    <h1 class="title">
+        {{ title }}
+    </h1>
+
+    <form [formGroup]="angajatForm" class="form">
+        <mat-form-field appearance="outline">
+            <mat-label>Id</mat-label>
+            <input matInput placeholder="Id" formControlName="id" />
+        </mat-form-field>
+  
+
+        <mat-form-field appearance="outline">
+            <mat-label>Nume</mat-label>
+            <input matInput placeholder="Nume" formControlName="nume" />
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Prenume</mat-label>
+            <input matInput placeholder="Prenume" formControlName="prenume" />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Job</mat-label>
+            <input matInput placeholder="Job" formControlName="job" />
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button (click)="!data ? AddAngajat() : EditAngajat()" appHoverBtn>   
+        Salvare
+    </button>
+</div>

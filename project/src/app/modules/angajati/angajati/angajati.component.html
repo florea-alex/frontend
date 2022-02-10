@@ -1,0 +1,66 @@
+<!--<app-child [messageFromParent]="parentMessage" (messageFromChild)="receiveMessage($event)"></app-child>-->
+<div class="container">
+
+    <h1 class="title">
+        Angajati
+    </h1>
+    <table mat-table [dataSource]="angajati" class="mat-elevation-z8 demo-table table">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>Id</th>
+          <td mat-cell *matCellDef="let element">{{element.id}}</td>
+        </ng-container>
+        <ng-container matColumnDef="nume">
+          <th mat-header-cell *matHeaderCellDef>Nume</th>
+          <td mat-cell *matCellDef="let element">{{element.nume}}</td>
+        </ng-container>
+        <ng-container matColumnDef="prenume">
+          <th mat-header-cell *matHeaderCellDef>Prenume</th>
+          <td mat-cell *matCellDef="let element">{{element.prenume}}</td>
+        </ng-container>
+        <ng-container matColumnDef="cnp">
+            <th mat-header-cell *matHeaderCellDef>Job</th>
+            <td mat-cell *matCellDef="let element">{{element.job}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="profile">
+          <th mat-header-cell *matHeaderCellDef>Profile</th>
+          <td mat-cell *matCellDef="let element" (click)="goToAngajatProfile(element)">
+              <mat-icon>
+                  persoana
+              </mat-icon>
+          </td>
+      </ng-container>
+    
+        <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef>Delete</th>
+            <td mat-cell *matCellDef="let element" (click)="deleteAngajat(element)">
+                <mat-icon>
+                    delete
+                </mat-icon>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+          <th mat-header-cell *matHeaderCellDef>Edit</th>
+          <td mat-cell *matCellDef="let element" (click)="editAngajat(element)">
+              <mat-icon>
+                  edit
+              </mat-icon>
+          </td>
+      </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <div class="buttons">
+      <button mat-raised-button (click)="addNewAngajat()" class="add-button">
+          Adauga un angajat nou
+      </button>
+    
+      <button mat-raised-button (click)="goToMagazin()" class="add-button">
+        Catre un magazin
+      </button>
+      </div>
+    
+    </div>
